@@ -46,8 +46,8 @@ const fetchData = async (year, code, latitude, longitude) => {
     const $ = cheerio.load(body);
     const data = $('tbody');
     const sunrise = data[0];
-    const solarNoon = data[1];
-    const sunset = data[2];
+    const sunset = data[1];
+    const solarNoon = data[2];
     const sunriseData = parseData($, sunrise, year);
     const solarNoonData = parseData($, solarNoon, year);
     const sunsetData = parseData($, sunset, year);
