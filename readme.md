@@ -17,11 +17,11 @@ https://www.esrl.noaa.gov/gmd/grad/solcalc/table.php
 
 ### sun 表
 
-time        日期
-code        区县编码
-sunrise     日升时间
-solar_moon  正午时间
-sunset      日落时间
+- time        日期
+- code        区县编码
+- sunrise     日升时间
+- solar_moon  正午时间
+- sunset      日落时间
 
 ### city 表
 
