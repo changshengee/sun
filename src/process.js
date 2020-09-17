@@ -2,6 +2,7 @@ const logger = require('./log')
 const fetchData = require('./fetch')
 const os = require("os")
 const {query, queryOne} = require('./mysql')
+const {fetchConfig} = require('../config/config')
 
 function sleep(milliSeconds) {
     const startTime = new Date().getTime();
@@ -33,7 +34,7 @@ const process = async () => {
             while (cities && cities.length > 0) {
                 const city = cities.shift();
                 await fetchData(city.year, city.code, city.latitude, city.longitude)
-                sleep(3000)
+                sleep(fetchConfig.sleepTime)
             }
         })
     }

@@ -1,5 +1,6 @@
 const path = require('path');
 const log4js = require('log4js');
+const {logConfig} = require('../config/config');
 
 const config = {
     /**
@@ -9,7 +10,7 @@ const config = {
     /**
      * 日志级别
      */
-    level: 'info',
+    level: logConfig.level,
     /**
      * 默认日志路径
      */

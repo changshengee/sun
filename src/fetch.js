@@ -3,7 +3,8 @@ const cheerio = require('cheerio')
 const {pool} = require('./mysql')
 const logger = require('./log')
 
-const baseUrl = "https://www.esrl.noaa.gov/gmd/grad/solcalc/table.php";
+const {fetchConfig} = require('../config/config')
+
 
 const parseData = ($, sunrise, year) => {
     const trs = $(sunrise).find('tr')
@@ -36,7 +37,7 @@ const saveData = async (code, year, sunData) => {
 }
 
 const fetchData = async (year, code, latitude, longitude) => {
-    const url = baseUrl +
+    const url = fetchConfig.baseUrl +
         '?lat=' + latitude +
         '&lon=' + longitude +
         '&year=' + year
